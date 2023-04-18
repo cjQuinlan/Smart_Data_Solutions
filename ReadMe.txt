@@ -1,4 +1,0 @@
-The answer for the CSV question was written in Visual Studio Code in Java, and the output csv file placed into the Test Output folder. To run the Java solution, open up the "Java_CSV_Merge" folder with Visual Studio Code. To run the ML program, you need to open up the Visual Studio solution in Microsoft Visual Studio. The answer for the ML part was written in Python in Microsoft Visual Studio, and also placed in the Test Output folder. I was able to build a classifier that used the image files. I did not have time to work on the text files.
-
-Thank you, I look forward to the next interview.
--Carsten Quinlan
