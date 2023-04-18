@@ -8,8 +8,9 @@ batch_size = 10
 img_height = 1000
 img_width = 1000
 
-train_ds  = tf.keras.utils.image_dataset_from_directory("Data/TrainingJPG/images/",image_size=(img_height, img_width),batch_size=batch_size)
-val_ds  = tf.keras.utils.image_dataset_from_directory("Data/TestingJPG/images/",image_size=(img_height, img_width),batch_size=batch_size)
+
+val_ds  = tf.keras.utils.image_dataset_from_directory("Data/TestingJPG/",image_size=(img_height, img_width),batch_size=batch_size)
+train_ds  = tf.keras.utils.image_dataset_from_directory("Data/TrainingJPG/",image_size=(img_height, img_width),batch_size=batch_size)
 
 # Autotune Performance
 AUTOTUNE = tf.data.AUTOTUNE
