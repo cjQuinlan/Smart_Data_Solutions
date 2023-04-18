@@ -18,29 +18,44 @@ public class TestSolution {
 		Scanner sc2 = new Scanner(new File(CSV_2_PATH));
 
 		String Line1 = sc1.nextLine();
-		String Line2 = sc2.nextLine();
-
-		String[] SplitLine1 = Line1.split(",",1);
-		String[] SplitLine2 = Line2.split(",",1);
-
+		String[] SplitLine1 = Line1.split(",",2);
 		Integer Key1 = Integer.parseInt(SplitLine1[0]);
-		Integer Key2 = Integer.parseInt(SplitLine1[0]);
+		String Line2 = sc2.nextLine();
+		String[] SplitLine2 = Line2.split(",",2);
+		Integer Key2 = Integer.parseInt(SplitLine2[0]);
 
-		Integer Value1 = Integer.parseInt(SplitLine1[1]);
-		Integer Value2 = Integer.parseInt(SplitLine1[1]);
-
-		System.out.println("Initial Values 1:");
+		/*System.out.println("Initial Values 1:");
 		System.out.println(Line1);
 		System.out.println(Key1);
-		System.out.println(Value1);
 
 		System.out.println("Initial Values 2:");
 		System.out.println(Line2);
-		System.out.println(Key2);
-		System.out.println(Value2);
+		System.out.println(Key2);*/
 
 		while (Count++ < Limit) {
-			System.out.println(Count);
+			// First check if they are equal
+			if (Key1 == Key2){
+				System.out.println(Line1 + "," + SplitLine2[1]);
+				// Print and advance both lines
+				Line1 = sc1.nextLine();
+				SplitLine1 = Line1.split(",",2);
+				Key1 = Integer.parseInt(SplitLine1[0]);
+				Line2 = sc2.nextLine();
+				SplitLine2 = Line2.split(",",2);
+				Key2 = Integer.parseInt(SplitLine2[0]);
+			}
+			// Then check if we advance to the next line of the second document
+			else if(Key1 > Key2){
+				Line2 = sc2.nextLine();
+				SplitLine2 = Line2.split(",",2);
+				Key2 = Integer.parseInt(SplitLine2[0]);
+			}
+			// Else we advance the line of the first document
+			else{
+				Line1 = sc1.nextLine();
+				SplitLine1 = Line1.split(",",2);
+				Key1 = Integer.parseInt(SplitLine1[0]);
+			}
 		}
 	}
 
